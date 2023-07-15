@@ -3,7 +3,7 @@
 // Create MySQL database
 $server = "localhost";
 $user = "root";
-$password = "";
+$password = "root";
 
 // Create new connection
 $connection = new mysqli($server, $user, $password, "", 3306);
@@ -14,7 +14,7 @@ if ($connection->connect_error) {
 }
 
 // Creates database, prints if it is successful or not
-$db = "CREATE DATABASE test_iworq_user_db";
+$db = "CREATE DATABASE iworq_user_db";
 if ($connection->query($db) === TRUE) {
     echo "Database created successfully";
 } else {
