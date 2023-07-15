@@ -15,20 +15,26 @@
         <div class="form-group">
             <label for="name">Full name</label>
             <input type="text" class="form-control border-black" id="name" name="name" placeholder="i.e. John Doe">
+            <small class="text-danger" id="name-error"></small>
         </div>
         <br>
         <div class="form-group">
             <label for="email">Email address</label>
             <input type="text" class="form-control border-black" id="email" name="email" placeholder="email@gmail.com">
+            <small class="text-danger" id="email-error"></small>
         </div>
         <br>
         <div class="form-group">
             <label for="note">Note</label>
             <textarea class="form-control border-black" id="note" name="note" rows="4"></textarea>
+            <small class="text-danger" id="note-error"></small>
         </div>
         <br>
         <button type="submit" class="btn btn-info border-black mb-2">Submit</button>
     </form>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="validation.js"></script>
 </body>
 
 </html>

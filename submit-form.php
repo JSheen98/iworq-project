@@ -1,19 +1,20 @@
 <?php
 
+// Grabs these inputs from the HTML forms
 $name = $_POST["name"];
 $email = $_POST["email"];
 $note = $_POST["note"];
 
-// jQuery validation
-if (! $name || ! $email || ! $note ) {
-    die ("Must fill out ALL fields!");
+// Doesn't let user progress until all fields are filled out
+if (!$name || !$email || !$note) {
+    die("Must fill out ALL fields!");
 }
 
 // Insert data into database
 $server = "localhost";
 $user = "root";
-$password = "";
-$dbname = "test_iworq_user_db";
+$password = "root";
+$dbname = "iworq_user_db";
 
 // Create connection with database
 $connection = new mysqli($server, $user, $password, $dbname, 3306);
@@ -22,15 +23,15 @@ if ($connection->connect_error) {
     die("Database connection failed: " . $connection->connect_error);
 }
 
-// // Inserts the data into database
-// $query = "INSERT INTO test_iworq_user_db (name, email, note)
-//           VALUES ('$name', '$email', '$note')";
+// Inserts the data into table in database
+$query = "INSERT INTO user (name, email, note)
+          VALUES ('$name', '$email', '$note')";
 
-// // If query is successful, data is inserted into table in database
-// if ($connection->query($dbname) === TRUE) {
-//     echo "New query saved";
-// } else {
-//     echo "Error: " . $query . "<br>" . $connection->error; 
-// }
+// If query is successful, data is inserted into table in database
+if ($connection->query($query) === TRUE) {
+    echo "New query saved";
+} else {
+    echo "Error: " . $query . "<br>" . $connection->error;
+}
 
-// $connection->close();
+$connection->close();
