@@ -4,6 +4,7 @@
 $name = $_POST["name"];
 $email = $_POST["email"];
 $note = $_POST["note"];
+$url = "index.html";
 
 // Doesn't let user progress until all fields are filled out
 if (!$name || !$email || !$note) {
@@ -13,7 +14,7 @@ if (!$name || !$email || !$note) {
 // Insert data into database
 $server = "localhost";
 $user = "root";
-$password = "root";
+$password = "";
 $dbname = "iworq_user_db";
 
 // Create connection with database
@@ -28,8 +29,11 @@ $query = "INSERT INTO user (name, email, note)
           VALUES ('$name', '$email', '$note')";
 
 // If query is successful, data is inserted into table in database
+
 if ($connection->query($query) === TRUE) {
-    echo "New query saved";
+    // Refreshes the page upon submission
+    header("Location: http://localhost/iworq-project/index.html");
+    exit();
 } else {
     echo "Error: " . $query . "<br>" . $connection->error;
 }
