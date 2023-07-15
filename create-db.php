@@ -1,9 +1,9 @@
 <?php
 
-// Create MySQL database
+// Connection variables
 $server = "localhost";
 $user = "root";
-$password = "root";
+$password = "";
 
 // Create new connection
 $connection = new mysqli($server, $user, $password, "", 3306);

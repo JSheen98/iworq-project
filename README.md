@@ -3,16 +3,16 @@
 ## User Story
 
 * AS part of the interview process
-* I NEED a sample project that includes an HTML form, a jQuery validation function for form input and submission, and a PHP function that puts that data in a database
+* I NEED a sample project that includes an HTML form, a jQuery validation function for form input and submission, and a PHP function that puts that data in a SQL database
 * SO THAT I can showcase my coding skills
 
 ## Technologies Used
 
 * PHP
 * HTML 
+* jQuery
 * Bootstrap
 * CSS
-* jQuery
 * MySQL
 
 ## Instructions

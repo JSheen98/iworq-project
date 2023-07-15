@@ -1,9 +1,9 @@
 <?php
 
-// Variable for new database
+// Connection variables
 $server = "localhost";
 $user = "root";
-$password = "root";
+$password = "";
 $dbname = "iworq_user_db";
 
 // Create a new connection now that db exists 
@@ -14,7 +14,7 @@ if ($connection->connect_error) {
     die("Database connection failed: " . $connection->connect_error);
 }
 
-// Creates a new table within the new database
+// Creates a new table within the new database with the given properties
 $table = "CREATE TABLE user (
     id INT(6) AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) NOT NULL,

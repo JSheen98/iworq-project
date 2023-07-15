@@ -1,3 +1,21 @@
+:root {
+    --peach: #dd7f5d
+}
 body {
-    background: #bacad3;
+    padding: 0;
+    margin: 0;
+    background: #f9f4d8;
+}
+header {
+    background-color: var(--peach);
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+button {
+    background-color: var(--peach) !important;
+}
+.border-peach {
+    border: solid 1px var(--peach) !important;
 }
