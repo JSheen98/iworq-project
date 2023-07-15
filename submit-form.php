@@ -8,7 +8,8 @@ $url = "index.html";
 
 // Doesn't let user progress until all fields are filled out
 if (!$name || !$email || !$note) {
-    die("Must fill out ALL fields!");
+    echo '<script>alert("Must fill out ALL fields!")</script>';
+    return;
 }
 
 // Insert data into database
