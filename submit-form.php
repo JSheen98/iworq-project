@@ -4,7 +4,6 @@
 $name = $_POST["name"];
 $email = $_POST["email"];
 $note = $_POST["note"];
-$url = "index.html";
 
 // Doesn't let user progress until all fields are filled out
 if (!$name || !$email || !$note) {
