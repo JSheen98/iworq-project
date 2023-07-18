@@ -17,12 +17,19 @@
 
 ## Instructions
 
-1. Open the integrated terminal in the ```iworq-project``` directory
-2. Run the command ```php .\create-db.php``` (*IMPORTANT: You must do this step BEFORE step 4)
-3. Ensure that the prompt says 'Database created successfully' in the terminal
-4. Run the command ```php .\create-table.php```
-5. Ensure that the prompt says 'New table saved' in the terminal
-6. From there, fill out the form in the browser and submit
-7. Use MySQL CLI to ensure data is inserted into the database correctly using the following commands: 
+1. Make sure you have the correct MySQL ```password``` input in the ```create-db.php```, ```create-table.php```, and ```submit-form.php``` files
+2. Open the integrated terminal in the ```iworq-project``` directory
+3. Run the command ```php .\create-db.php``` (*IMPORTANT: You must do this step BEFORE step 5)
+4. Ensure that the prompt says 'Database created successfully' in the terminal
+5. Run the command ```php .\create-table.php```
+6. Ensure that the prompt says 'New table saved' in the terminal
+7. From there, fill out the form in the browser and submit
+8. Use MySQL CLI to ensure data is inserted into the database correctly using the following commands: 
     * ```USE iworq_user_db;``` (selects the database you want to view)
     * ```SELECT * FROM user;``` (selects the table within the database to view)
+
+## Assets
+
+The following video contains a sample walkthrough of this project's functionality:
+<br>
+https://drive.google.com/file/d/1hscFDKyNvxKoJXEs2B7Z1sYKoI8E6zxE/view
