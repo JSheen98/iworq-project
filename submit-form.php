@@ -14,7 +14,7 @@ if (!$name || !$email || !$note) {
 // Insert data into database
 $server = "localhost";
 $user = "root";
-$password = "";
+$password = "root";
 $dbname = "iworq_user_db";
 
 // Create connection with database
@@ -26,16 +26,26 @@ if ($connection->connect_error) {
 
 // Inserts the data into table in database
 $query = "INSERT INTO user (name, email, note)
-          VALUES ('$name', '$email', '$note')";
+          VALUES (?, ?, ?)"; // Placeholders
 
-// If query is successful, data is inserted into table in database
-
-if ($connection->query($query) === TRUE) {
-    // Refreshes the page upon submission
-    header("Location: http://localhost/iworq-project/index.html");
-    exit();
-} else {
-    echo "Error: " . $query . "<br>" . $connection->error;
+// create prepared statement (for protection against SQL injection)
+$stmt = mysqli_stmt_init($connection);
+// Returns boolean value if successful or not
+// if false, code will stop and print connection error
+if (!mysqli_stmt_prepare($stmt, $query)) {
+    die(mysqli_error($connection));
 }
 
+// use this to bind our variables, pass in stmt, and second variable will be string of types for variables we're using
+// for example, sss is three strings (since all our fields are strings)
+mysqli_stmt_bind_param($stmt, "sss",
+    $name,
+    $email,
+    $note
+);
+
+mysqli_stmt_execute($stmt);
+
+// Refreshes the page upon submission, and closes connection with db
+header("Location: http://localhost/iworq-project/index.html");
 $connection->close();
