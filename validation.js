@@ -23,7 +23,7 @@ $(document).ready(function () {
         e.preventDefault()
 
         // Get the value from the email field
-        var emailRegex = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+        var emailRegex = /^([a-zA-Z0-9_\.-]+)@([\da-zA-Z0-9\.-]+)\.([a-zA-Z\.]{2,6})$/
         var email = $('#email').val()
         // If the length of email is 0, add this text to the html class
         if ($.trim(email).length == 0) {
